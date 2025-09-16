@@ -10,7 +10,17 @@ class CircularQueueOneSlotEmpty:
     - rear:  '맨 마지막 요소'의 인덱스
     """
     
-    
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.N = self.capacity + 1 #내부 배열 크기 단 배열의 한칸(슬롯) 비움
+        self.array = [None] * self.N 
+        self.front = 0
+        self.rear = 0
+
+    def is_empty(self):
+        return self.front == self.rear
+    def if_full(self):
+        return self.front == (self.rear + 1) % self.N
 
     
    
